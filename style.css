@@ -1,0 +1,31 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('pictures/звизды.gif'); /* Замените на ваш фон */
+    background-size: cover;
+    filter: blur(15px); /* Уровень размытия */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Убедитесь, что контент выше фона */
+    color: white; /* Цвет текста */
+    text-align: center;
+    padding: 20px;
+    
+}
+* {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
