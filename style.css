@@ -80,6 +80,7 @@ body, html {
     width: 120px;
     overflow: visible;
     justify-content: center;
+    z-index: 1;
 }
 
 .nav-icon {
@@ -89,6 +90,7 @@ body, html {
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
     object-fit: contain;
+    pointer-events: none;
 }
 
 .nav-text {
@@ -103,6 +105,8 @@ body, html {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     border-radius: 10px;
+    pointer-events: none;
+    z-index: 100;
 }
 
 .nav-button:hover {
