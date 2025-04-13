@@ -10,7 +10,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('pictures/звизды.gif'); /* Замените на ваш фон */
+    background-image: url('./pictures/stars.gif'); /* Добавил ./ и изменил имя файла */
     background-size: cover;
     filter: blur(15px); /* Уровень размытия */
 }
