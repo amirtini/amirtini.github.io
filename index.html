@@ -206,7 +206,7 @@ body::before {
                 </a>
             </li>
             <li>
-                <a href="#about" class="nav-button">
+                <a href="about.html" class="nav-button">
                     <span class="nav-text">Обо мне</span>
                 </a>
             </li>
@@ -231,8 +231,34 @@ body::before {
             <h1 class="title">Главная</h1>
     </div>
     <div class="content" style="color: rgb(0, 255, 34);">
-        <h1 class="main-text">Привет! Это мой сайт! Меня зовут Amirtini и я начинающий программист! На этом сайте вы можете узнать обо мне, моих проектах и связаться со мной! Чтобы гулять по страницам сайта, нажимайте по кнопкам в левой части страницы!</h1>
+        <h1 class="main-text">Дарова это мой супер крутой сайт! На нём вы можете узнать обо мне, моих проектах и связаться со мной! Чтобы гулять по страницам сайта, нажимайте по кнопкам в левой части страницы!</h1>
     </div>
 
+    <div id="clicker">
+        <img src="./pictures/click-image.png" alt="Кликни меня" id="clickable-image" style="cursor: pointer; width: 200px; height: auto;">
+        <p>Нажатий: <span id="click-count">0</span></p>
+    </div>
+
+    <script>
+    // Получаем элементы
+    const clickableImage = document.getElementById('clickable-image');
+    const clickCountDisplay = document.getElementById('click-count');
+
+    let clickCount = 0; // Инициализируем счетчик
+
+    // Добавляем обработчик события клика
+    clickableImage.addEventListener('click', () => {
+        clickCount++; // Увеличиваем счетчик
+        clickCountDisplay.textContent = `Нажатий: ${clickCount}`; // Обновляем отображение счетчика
+
+        // Увеличиваем изображение
+        clickableImage.style.transform = 'scale(1.2)'; // Увеличиваем изображение на 20%
+        
+        // Возвращаем изображение в исходное состояние через 200 мс
+        setTimeout(() => {
+            clickableImage.style.transform = 'scale(1)';
+        }, 200);
+    });
+    </script>
 </body>
 </html>
