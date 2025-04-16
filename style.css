@@ -147,24 +147,29 @@ body::before {
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: -50%;
+    margin-top: -100%;
     margin-left: 10%;
 }
 
 .main-content {
     position: relative;
     z-index: 20; /* Убедитесь, что z-index выше, чем у фона и рамки */
-    color: white;
+    color: rgb(71, 255, 132);
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin-left: 250px; /* Убедитесь, что это значение соответствует ширине панели */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
     min-height: 10vh; /* Убедитесь, что это значение не слишком велико */
+    margin-top: 0; /* Увеличьте значение, чтобы опустить текст ниже */
 }
 
 .main-content h1 {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    top: 20px; /* Установите нужное значение для вертикального расположения */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
     max-width: 600px;
     line-height: 1.6;
     font-size: 40px;
