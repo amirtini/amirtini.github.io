@@ -12,7 +12,7 @@ body, html {
     bottom: 0;
     background-image: url('./pictures/stars.gif'); /* Добавил ./ и изменил имя файла */
     background-size: cover;
-    filter: blur(15px); /* Уровень размытия */
+    filter: blur(25px); /* Уровень размытия */
 }
 
 .content {
@@ -25,7 +25,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .content h1 {
@@ -74,21 +74,20 @@ body, html {
     color: white;
     text-decoration: none;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: all 0.3s ease;
     position: relative;
-    width: 120px;
-    overflow: visible;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
     justify-content: center;
     z-index: 1;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Default glow */
 }
 
 .nav-icon {
-    width: 80px;
-    height: 80px;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     pointer-events: none;
 }
@@ -101,7 +100,9 @@ body, html {
     transition: all 0.3s ease;
     white-space: nowrap;
     position: absolute;
-    left: 140px;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     border-radius: 10px;
@@ -111,11 +112,12 @@ body, html {
 
 .nav-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5); /* Glow on hover */
 }
 
 .nav-button:hover .nav-text {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(-50%) translateX(10px);
 }
 
 * {
@@ -123,4 +125,54 @@ body, html {
     font-weight: 400;
     font-style: normal;
 }
-  
+.tooltip {
+    display: none; /* Скрываем подсказку по умолчанию */
+    position: absolute;
+    left: 100%; /* Позиция справа от кнопки */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 200; /* Убедитесь, что подсказка выше других элементов */
+    transition: opacity 0.3s ease; /* Плавный переход */
+    opacity: 0; /* Начальное состояние - скрыто */
+}
+
+.nav-button:hover .tooltip {
+    display: block; /* Показываем подсказку при наведении */
+    opacity: 1; /* Показать подсказку */
+}
+
+.main-title {
+    font-size: 64px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: -50%;
+    margin-left: 10%;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+}
+
+.main-content h1 {
+    max-width: 600px;
+    line-height: 1.6;
+    font-size: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
