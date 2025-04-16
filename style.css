@@ -14,7 +14,7 @@ body::before {
     bottom: 0;
     border: 4ch solid rgba(16, 19, 26); /* Увеличиваем толщину обводки до 30px */
     pointer-events: none; /* Чтобы обводка не мешала взаимодействию с элементами */
-    z-index: 10; /* Убедитесь, что обводка выше других элементов */
+    z-index: 5; /* Убедитесь, что обводка ниже других элементов */
 }
 
 .background {
@@ -26,12 +26,12 @@ body::before {
     background-image: url('./pictures/stars.gif'); /* Добавил ./ и изменил имя файла */
     background-size: cover;
     filter: blur(25px); /* Уровень размытия */
-    z-index: 5; /* Убедитесь, что z-index ниже, чем у текста и других элементов */
+    z-index: 1; /* Убедитесь, что z-index ниже, чем у текста и других элементов */
 }
 
 .content {
     position: relative;
-    z-index: 20; /* Убедитесь, что z-index выше, чем у фона */
+    z-index: 20; /* Убедитесь, что z-index выше, чем у фона и рамки */
     color: white;
     text-align: center;
     padding: 20px;
@@ -47,9 +47,10 @@ body::before {
     line-height: 1.6;
     font-size: 32px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5); /* Увеличиваем непрозрачность фона */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 21; /* Убедитесь, что z-index выше, чем у рамки */
 }
 
 .sidebar {
@@ -64,7 +65,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Выравнивание по верхнему краю */
-    z-index: 20; /* Убедитесь, что z-index выше, чем у фона */
+    z-index: 20; /* Убедитесь, что z-index выше, чем у рамки */
 }
 
 .sidebar ul {
@@ -152,7 +153,7 @@ body::before {
 
 .main-content {
     position: relative;
-    z-index: 20; /* Убедитесь, что z-index выше, чем у фона */
+    z-index: 20; /* Убедитесь, что z-index выше, чем у фона и рамки */
     color: white;
     text-align: center;
     padding: 20px;
@@ -168,7 +169,8 @@ body::before {
     line-height: 1.6;
     font-size: 40px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5); /* Увеличиваем непрозрачность фона */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 21; /* Убедитесь, что z-index выше, чем у рамки */
 }
