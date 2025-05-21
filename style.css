@@ -246,12 +246,14 @@ body, html {
     backdrop-filter: blur(8px);
     z-index: 21;
     transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
 .main-content h1:hover {
     transform: scale(1.02);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 .main-text2 {
@@ -270,6 +272,7 @@ body, html {
     overflow: auto; /* Добавляем прокрутку, если текст не помещается */
     z-index: 21;
     transition: all 0.3s ease;
+    border-radius: 10px;
 }
 
 .main-text2:hover {
@@ -279,13 +282,13 @@ body, html {
 }
 
 #clicker {
-    margin-top: 20px;
-    margin-left: 0;
+    margin-top: -40px;
+    margin-left: 50%;
     text-align: center;
 }
 
 #clicker img {
-    width: 200px;
+    width: 600px; /* Было 200px */
     height: auto;
     transition: all 0.3s ease;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -298,7 +301,7 @@ body, html {
 
 #clicker p {
     color: white;
-    font-size: 18px;
+    font-size: 48px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
 }
@@ -498,4 +501,33 @@ body, html {
 
 #formStatus.error {
     color: #f44336;
+}
+
+.click-image {
+    width: 600px; /* Было 300px */
+    height: 600px; /* Было 300px */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.cps-display {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.cps-display:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }

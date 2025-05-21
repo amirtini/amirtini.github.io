@@ -52,13 +52,15 @@
         
         <!-- Кликер -->
         <div id="clicker">
-            <img src="./pictures/click-image.png" alt="Кликни меня" id="clickable-image" style="cursor: pointer; width: 200px; height: auto;">
+            <div class="cps-display">Кликов в секунду: <span id="cps">0</span></div>
+            <img src="./pictures/click-image.png" alt="Кликни меня" id="clickable-image" class="click-image">
             <p>Нажатий: <span id="click-count">0</span></p>
         </div>
     </div>
 
     <div id="particle-container"></div>
 
+    <audio id="clickSound" src="./pictures/click.mp3" preload="auto"></audio>
     <script src="script.js"></script> <!-- Подключаем JavaScript файл -->
 </body>
 </html>

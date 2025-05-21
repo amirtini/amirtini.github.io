@@ -2,13 +2,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Получаем элементы
     const clickableImage = document.getElementById('clickable-image');
     const clickCountDisplay = document.getElementById('click-count');
+    const clickSound = document.getElementById('clickSound');
+    const cpsDisplay = document.getElementById('cps');
 
     let clickCount = 0; // Инициализируем счетчик
+    let clicksInLastSecond = 0; // Клики за последнюю секунду
+    let lastClickTime = Date.now(); // Время последнего клика
+
+    // Функция для обновления CPS
+    function updateCPS() {
+        const currentTime = Date.now();
+        const timeDiff = currentTime - lastClickTime;
+        
+        if (timeDiff >= 1000) {
+            cpsDisplay.textContent = clicksInLastSecond;
+            clicksInLastSecond = 0;
+            lastClickTime = currentTime;
+        }
+    }
+
+    // Запускаем обновление CPS каждую секунду
+    setInterval(updateCPS, 1000);
 
     // Добавляем обработчик события клика
     clickableImage.addEventListener('click', () => {
         clickCount++; // Увеличиваем счетчик
+        clicksInLastSecond++; // Увеличиваем счетчик кликов за последнюю секунду
         clickCountDisplay.textContent = ` ${clickCount}`; // Обновляем отображение счетчика
+
+        // Воспроизводим звук клика
+        clickSound.currentTime = 0; // Сбрасываем время воспроизведения
+        clickSound.play(); // Воспроизводим звук
 
         // Увеличиваем изображение
         clickableImage.style.transform = 'scale(1.2)'; // Увеличиваем изображение на 20%
