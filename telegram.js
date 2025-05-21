@@ -41,7 +41,7 @@ async function getBotResponses() {
                         
                         responseItem.innerHTML = `
                             <div class="response-header">
-                                <span>${isBot ? 'Ответ от бота' : 'Ваше сообщение'}</span>
+                                <span>${isBot ? 'Ответ от бота' : 'Amirtini'}</span>
                                 <span>${formattedDate}</span>
                             </div>
                             <div class="response-content">${message}</div>

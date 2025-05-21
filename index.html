@@ -1,148 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <style>
-        body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('./pictures/stars.gif'); /* Добавил ./ и изменил имя файла */
-    background-size: cover;
-    filter: blur(25px); /* Уровень размытия */
-    z-index: 1; /* Убедитесь, что z-index ниже, чем у текста и других элементов */
-}
-
-.content {
-    position: relative;
-    z-index: 20; /* Убедитесь, что z-index выше, чем у фона и рамки */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-left: 250px; /* Убедитесь, что это значение соответствует ширине панели */
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Вернем align-items к center */
-    min-height: calc(100vh - 40px); /* Устанавливаем минимальную высоту, чтобы избежать пустого пространства */
-}
-
-.content h1 {
-    max-width: 800px;
-    line-height: 1.6;
-    font-size: 32px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Увеличиваем непрозрачность фона */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 21; /* Убедитесь, что z-index выше, чем у рамки */
-}
-
-.sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px; /* Увеличьте ширину панели, если необходимо */
-    height: 100vh;
-    background-color: rgba(12, 5, 36, 0.7);
-    padding: 40px 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    z-index: 20; /* Убедитесь, что z-index выше, чем у рамки */
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sidebar li {
-    margin-bottom: 30px;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-button {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 10px; /* Закругление углов */
-    transition: all 0.3s ease;
-    position: relative;
-    width: 100%; /* Занимает всю ширину панели */
-    height: 60px; /* Высота кнопки */
-    background-color: rgba(0, 7, 49, 0.8); /* Новый цвет фона кнопки */
-    margin-bottom: 40px; /* Отступ между кнопками */
-    justify-content: center; /* Центрирование текста */
-}
-
-.nav-text {
-    font-family: "Geologica", sans-serif; /* Шрифт текста */
-    font-size: 24px; /* Размер шрифта */
-    color: white; /* Цвет текста */
-}
-
-.nav-button:hover {
-    background-color: rgba(34, 0, 114, 0.9); /* Цвет фона при наведении */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5); /* Эффект свечения при наведении */
-}
-
-.nav-button:hover .nav-text {
-    opacity: 1; /* Убираем трансформацию */
-}
-
-* {
-    font-family: "Geologica", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.tooltip {
-    display: none; /* Скрываем подсказку по умолчанию */
-    position: absolute;
-    left: 100%; /* Позиция справа от кнопки */
-    top: 50%; /* Центрирование по вертикали */
-    transform: translateY(-50%); /* Центрирование */
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    z-index: 200; /* УбедиSтесь, что подсказка выше других элементов */
-    transition: opacity 0.3s ease; /* Плавный переход */
-    opacity: 0; /* Начальное состояние - скрыто */
-}
-
-.nav-button:hover .tooltip {
-    display: block; /* Показываем подсказку при наведении */
-    opacity: 1; /* Показать подсказку */
-}
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheAmirtini</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./pictures/avatarka.ico" type="image/x-icon">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background"></div>
@@ -174,20 +40,20 @@
                     <span class="nav-text">Соц сети</span>
                 </a>
             </li>
+            <li>
+                <a href="updates.html" class="nav-button">
+                    <span class="nav-text">Обновления</span>
+                </a>
+            </li>
         </ul>
     </div>
 
     <div class="main-content">
-        <h1 class="title">Главная</h1>
+        <h1 class="title">Добро пожаловать!</h1>
     </div>
 
     <div class="content">
-        <h1 class="main-text">Дарова это мой супер крутой сайт! На нём вы можете узнать обо мне, моих проектах и связаться со мной! Чтобы "гулять" по страницам сайта, нажимайте по кнопкам в верхней части страницы!</h1>
-    </div>
-
-    <div id="clicker">
-        <img src="./pictures/click-image.png" alt="Кликни меня" id="clickable-image" style="cursor: pointer; width: 200px; height: auto;">
-        <p>Нажатий: <span id="click-count">0</span></p>
+        <h1 class="main-text2">Привет! Меня зовут Амир я начинающий программист, изучаю языки html, css, js, python, c# и c++. Еще у меня есть свой YT-канал (в вкладке "Соц сети") на котором я играю в minecraft и делаю анимации по этой игре. Я живу в России, в городе Санкт-Петербург.</h1>
     </div>
 
     <script src="script.js"></script>

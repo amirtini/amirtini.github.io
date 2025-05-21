@@ -2,8 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     background-color: #0a0a1a; /* Добавляем темный фон */
+    overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
 }
 
 .background {
@@ -81,17 +81,20 @@ body, html {
 }
 
 .content {
-    position: relative;
+    position: fixed;
     z-index: 20;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-left: 0;
-    margin-top: 120px; /* Уменьшаем отступ сверху */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 40px);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .content h1 {
@@ -226,7 +229,7 @@ body, html {
     color: rgb(71, 255, 132);
     text-align: center;
     padding: 10px;
-    top: 100px;
+    top: 80px; /* Уменьшаем отступ сверху */
     left: 0;
     right: 0;
     display: flex;
@@ -257,22 +260,22 @@ body, html {
 }
 
 .main-text2 {
-    position: absolute;
-    top: 12%;
-    left: 9%;
+    position: relative;
     font-size: 24px;
     max-width: 600px;
-    max-height: 500px;
+    width: 100%;
     line-height: 1.6;
     padding: 20px;
     background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
-    overflow: auto; /* Добавляем прокрутку, если текст не помещается */
+    overflow: auto;
     z-index: 21;
     transition: all 0.3s ease;
     border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .main-text2:hover {
@@ -282,21 +285,23 @@ body, html {
 }
 
 #clicker {
-    margin-top: -40px;
-    margin-left: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #clicker img {
-    width: 600px; /* Было 200px */
+    width: 600px;
     height: auto;
     transition: all 0.3s ease;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-}
-
-#clicker img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+    margin: 20px auto;
+    display: block;
 }
 
 #clicker p {
@@ -521,13 +526,198 @@ body, html {
     backdrop-filter: blur(8px);
     color: white;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     text-align: center;
     transition: all 0.3s ease;
+    max-width: 600px;
 }
 
 .cps-display:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Стили для страницы обновлений */
+body.updates-page {
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+body.updates-page .background {
+    min-height: 100%;
+    height: auto;
+}
+
+body.updates-page .content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 120px;
+}
+
+body.updates-page .main-title {
+    position: fixed !important;
+    top: 150px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1001 !important;
+    text-align: center !important;
+    color: rgb(71, 255, 132) !important;
+    font-size: 40px !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    pointer-events: none !important;
+    transform: none !important;
+}
+
+body.updates-page .main-content {
+    position: relative;
+    z-index: 1000;
+    color: rgb(71, 255, 132);
+    text-align: center;
+    padding: 10px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+body.updates-page .main-content h1 {
+    position: relative;
+    max-width: 600px;
+    line-height: 1.6;
+    font-size: 40px;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    z-index: 21;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+body.updates-page .main-content h1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.updates-container {
+    position: relative;
+    z-index: 100;
+    max-width: 800px;
+    margin: 150px auto 0;
+    padding: 20px;
+}
+
+.update-item {
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.update-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.update-date {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.update-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.update-content {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.update-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.tag-new {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.tag-fix {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+}
+
+.tag-feature {
+    background: rgba(33, 150, 243, 0.2);
+    color: #2196F3;
+}
+
+/* Стили для страницы "Обо мне" */
+body.about-page .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+}
+
+body.about-page .main-text2 {
+    margin-right: auto;
+    margin-left: 8%; /* Уменьшаем отступ слева */
+    max-width: 500px;
+}
+
+body.about-page #clicker {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-left: auto;
+    margin-right: 8%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.about-page #clicker img {
+    width: 500px; /* Уменьшаем размер изображения */
+    height: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    margin: 20px auto;
+    display: block;
+}
+
+body.about-page .cps-display {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+body.about-page #clicker p {
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
 }
