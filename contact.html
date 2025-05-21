@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - TheAmirtini</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./pictures/avatarka.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="index.html" class="nav-button">
+                    <span class="nav-text">Главная</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html" class="nav-button">
+                    <span class="nav-text">Обо мне</span>
+                </a>
+            </li>
+            <li>
+                <a href="projects.html" class="nav-button">
+                    <span class="nav-text">Проекты</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="nav-button">
+                    <span class="nav-text">Контакты</span>
+                </a>
+            </li>
+            <li>
+                <a href="social.html" class="nav-button">
+                    <span class="nav-text">Соц сети</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 class="title">Контакты</h1>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Свяжитесь со мной</h2>
+            <p>Вы можете написать мне сообщение, используя форму ниже. Я постараюсь ответить как можно скорее!</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="feedback-form">
+                <h2>Напишите мне</h2>
+                <form id="telegramForm">
+                    <input type="text" id="name" placeholder="Ваше имя" required>
+                    <textarea id="message" placeholder="Ваше сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div id="formStatus"></div>
+            </div>
+
+            <div class="responses-section">
+                <h2>Ответы на сообщения</h2>
+                <div class="responses-container" id="responsesContainer">
+                    <!-- Здесь будут отображаться ответы -->
+                    <div class="no-responses">Пока нет ответов на сообщения</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="telegram.js"></script>
+</body>
+</html> 

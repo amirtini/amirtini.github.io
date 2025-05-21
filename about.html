@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне - TheAmirtini</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./pictures/avatarka.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="index.html" class="nav-button">
+                    <span class="nav-text">Главная</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html" class="nav-button">
+                    <span class="nav-text">Обо мне</span>
+                </a>
+            </li>
+            <li>
+                <a href="projects.html" class="nav-button">
+                    <span class="nav-text">Проекты</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" class="nav-button">
+                    <span class="nav-text">Контакты</span>
+                </a>
+            </li>
+            <li>
+                <a href="social.html" class="nav-button">
+                    <span class="nav-text">Соц сети</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 class="title">Обо мне</h1>
+    </div>
+    <div class="content" style="color: rgb(123, 255, 215); ">
+        <h1 class="main-text2">Привет! Меня зовут Амир я начинающий программист, изучаю языки html, css, js, python, c# и c++. Еще у меня есть свой YT-канал (в вкладке "Соц сети") на котором я играю в minecraft и делаю анимации по этой игре. Я живу в России, в городе Санкт-Петербург.</h1>
+        
+        <!-- Кликер -->
+        <div id="clicker">
+            <img src="./pictures/click-image.png" alt="Кликни меня" id="clickable-image" style="cursor: pointer; width: 200px; height: auto;">
+            <p>Нажатий: <span id="click-count">0</span></p>
+        </div>
+    </div>
+
+    <div id="particle-container"></div>
+
+    <script src="script.js"></script> <!-- Подключаем JavaScript файл -->
+</body>
+</html>
