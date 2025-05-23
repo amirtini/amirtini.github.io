@@ -293,22 +293,37 @@ body, html {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    will-change: transform; /* Оптимизация для анимаций */
 }
 
 #clicker img {
-    width: 600px;
+    width: 300px; /* Уменьшаем размер для мобильных устройств */
     height: auto;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease; /* Уменьшаем время анимации */
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     margin: 20px auto;
     display: block;
+    -webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе на мобильных */
+    touch-action: manipulation; /* Оптимизация для тач-событий */
 }
 
 #clicker p {
     color: white;
-    font-size: 48px;
+    font-size: 32px; /* Уменьшаем размер шрифта */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-top: 10px;
+    will-change: transform; /* Оптимизация для анимаций */
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    #clicker img {
+        width: 200px; /* Еще меньше размер для маленьких экранов */
+    }
+    
+    #clicker p {
+        font-size: 24px; /* Меньший размер шрифта для мобильных */
+    }
 }
 
 .contact-container {
@@ -577,7 +592,7 @@ body.updates-page .main-content {
     color: rgb(71, 255, 132);
     text-align: center;
     padding: 10px;
-    margin-top: 80px;
+    margin-top: 120px; /* Увеличиваем отступ сверху */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -609,7 +624,7 @@ body.updates-page .main-content h1:hover {
     position: relative;
     z-index: 100;
     max-width: 800px;
-    margin: 150px auto 0;
+    margin: 50px auto 0; /* Уменьшаем отступ сверху, так как основной отступ теперь у main-content */
     padding: 20px;
 }
 
@@ -720,4 +735,137 @@ body.about-page #clicker p {
     width: 100%;
     text-align: center;
     margin: 10px auto;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    /* Навигационная панель */
+    .sidebar {
+        padding: 10px 0;
+    }
+
+    .sidebar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-button {
+        padding: 8px 15px;
+        margin: 0 5px;
+    }
+
+    .nav-text {
+        font-size: 16px;
+    }
+
+    /* Заголовки */
+    .main-title {
+        font-size: 32px;
+        top: 100px;
+    }
+
+    .main-content h1 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    /* Контент */
+    .content {
+        padding: 10px;
+        top: 50%;
+    }
+
+    .content h1 {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    /* Страница "Обо мне" */
+    body.about-page .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    body.about-page .main-text2 {
+        margin: 0 auto;
+        max-width: 90%;
+        font-size: 18px;
+    }
+
+    body.about-page #clicker {
+        margin: 0 auto;
+    }
+
+    body.about-page #clicker img {
+        width: 200px;
+    }
+
+    /* Страница контактов */
+    .contact-container {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .feedback-form,
+    .responses-section {
+        width: 100%;
+    }
+
+    /* Страница обновлений */
+    .updates-container {
+        margin: 30px auto 0;
+        padding: 10px;
+    }
+
+    .update-item {
+        padding: 15px;
+    }
+
+    .update-title {
+        font-size: 20px;
+    }
+
+    .update-content {
+        font-size: 14px;
+    }
+
+    /* Счетчик кликов */
+    .cps-display {
+        font-size: 24px;
+        padding: 10px;
+        max-width: 90%;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+    .nav-button {
+        padding: 6px 12px;
+    }
+
+    .nav-text {
+        font-size: 14px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .update-item {
+        padding: 10px;
+    }
+
+    .update-title {
+        font-size: 18px;
+    }
 }
