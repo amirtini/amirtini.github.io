@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/Ava.ico">
+    <script src="script.js"></script>
+    <title>Амиртини</title>
+
+
+
+
+</head>
+
+<body class="background-blur">
+    
+    <header>
+
+        <div class="navbar">
+            <a href="index.html" class="nav-button">
+                <img src="assets/Avaa.ico" alt="" >
+
+            </a>
+            <ul class="nav-items">
+                <li >
+                    <a href="aboutme.html"> 
+                        <span class="nav-text" > <img src="assets/aboutme.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Обомне</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="social.html" class="nav-button">
+                        <span class="nav-text" > <img src="assets/social.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Соцсети</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" class="nav-button">
+                        <span class="nav-text"><img src="assets/projects.svg" style=" width: 2em; height: 1em; vertical-align: middle;"> Проекты</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="helpful.html" class="nav-button">
+                        <span class="nav-text"> <img src="assets/helpful.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Полезности</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="updates.html" class="nav-button">
+                        <span class="nav-text"> <img src="assets/updates.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Обновления</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="chillzone.html" class="nav-button">
+                        <span class="nav-text"><img src="assets/chillzone.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Чиллзона</span>
+                    </a>
+                </li>
+                <li class="rate">
+                    <a href="rate.html" class="nav-button]">
+                        <span class="nav-text" ><img src="assets/rate.svg" style=" width: 2em; height: 1em; vertical-align: middle;">Оценить сайт</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <div class="content"  id="content">
+            <div class="content-text">
+                <h2>Привет 👋</h2>
+                <p>Меня зовут Амир, в интернете — Amirtini. Этот сайт я сделал полностью своими руками, чтобы демонстрировать здесь свои навыки и делиться своими проектами. Тут вы можете узнать что-то обо мне или просто заценить сайт
+                </p>
+            </div>
+            
+            <img src="assets/3dtheamirtini.png">
+        </div>
+
+
+
+    </main>
+
+    </body>
+
+<script>
+const card = document.querySelector('.content');
+
+document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const { innerWidth, innerHeight } = window;
+
+    const rotationX = ((clientY - innerHeight / 2) / innerHeight) * -20;
+    const rotationY = ((clientX - innerWidth / 2) / innerWidth) * 20;
+
+    card.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+});
+
+document.addEventListener('mouseleave', () => {
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+});
+
+</script>
+
+ 
+
+
+
+
+
+
+</html>
